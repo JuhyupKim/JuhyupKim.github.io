@@ -18,7 +18,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: LG스마트체 Regular, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
@@ -75,8 +75,6 @@
         }
 
         .system-image {
-            width: 80px;
-            height: 80px;
             border-radius: 8px;
             object-fit: cover;
             margin-bottom: 15px;
@@ -93,6 +91,31 @@
             font-size: 0.95rem;
             color: #7f8c8d;
             line-height: 1.5;
+        }
+
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+			text-align: right;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        .button:hover {
+            transform: scale(1.1);
+        }
+        .orange {
+            background-color: orange;
+        }
+        .orange:hover {
+            background-color: darkorange;
+        }
+        .green {
+            background-color: green;
+        }
+        .green:hover {
+            background-color: darkgreen;
         }
 
         @media (max-width: 768px) {
@@ -113,10 +136,6 @@
                 padding: 20px;
             }
             
-            .system-image {
-                width: 60px;
-                height: 60px;
-            }
         }
 
         @media (min-width: 769px) and (max-width: 1024px) {
@@ -141,31 +160,35 @@
 
         <div class="system-grid">
             <!-- 시스템 1 -->
-            <a href="user-management.html" class="system-button">
-                <img src="/api/placeholder/80/80" alt="사용자 관리" class="system-image">
-                <h2 class="system-title">사용자 관리</h2>
-                <p class="system-description">사용자 계정 생성, 권한 설정, 그룹 관리 및 접근 제어를 위한 통합 시스템입니다.</p>
+            <a href="https://living-dvc.lge.com/dvc" class="system-button">
+                <img src="https://github.com/JuhyupKim/JuhyupKim.github.io/blob/main/icon/Living_DVC.png?raw=true" alt="Living DVC" class="system-image" height="30">
+                <h2 class="system-title">리빙 DVC</h2>
+                <p class="system-description">리빙 사업부 대시보드</p>
+				<button class="button orange">권한 필요</button>
             </a>
 
             <!-- 시스템 2 -->
-            <a href="data-analysis.html" class="system-button">
-                <img src="/api/placeholder/80/80" alt="데이터 분석" class="system-image">
-                <h2 class="system-title">데이터 분석</h2>
-                <p class="system-description">실시간 데이터 처리, 고급 분석 및 시각화 도구가 포함된 종합 데이터 분석 플랫폼입니다.</p>
+            <a href="https://dpg.lge.com" class="system-button">
+                <img src="https://github.com/JuhyupKim/JuhyupKim.github.io/blob/main/icon/Tableau_Logo.png?raw=true" alt="Kitchen Solution" class="system-image" height="30">
+                <h2 class="system-title">키친 K-DPG</h2>
+                <p class="system-description">키친 사업부 대시보드</p>
+				<button class="button orange">권한 필요</button>
             </a>
 
             <!-- 시스템 3 -->
-            <a href="security-management.html" class="system-button">
-                <img src="/api/placeholder/80/80" alt="보안 관리" class="system-image">
-                <h2 class="system-title">보안 관리</h2>
-                <p class="system-description">네트워크 보안, 암호화, 위협 감지 및 취약점 관리를 위한 고급 보안 시스템입니다.</p>
+            <a href="https://ha-marketing.lge.com" class="system-button">
+                <img src="https://github.com/JuhyupKim/JuhyupKim.github.io/blob/main/icon/Tableau_Logo.png?raw=true" alt="HS Marketing" class="system-image" height="30">
+                <h2 class="system-title">영업/마케팅 대시보드</h2>
+                <p class="system-description">BTR 및 브랜드관, SEO 등</p>
+				<button class="button green">권한 OK</button>
             </a>
 
             <!-- 시스템 4 -->
-            <a href="resource-monitoring.html" class="system-button">
-                <img src="/api/placeholder/80/80" alt="리소스 모니터링" class="system-image">
-                <h2 class="system-title">리소스 모니터링</h2>
-                <p class="system-description">서버 및 네트워크 리소스의 상태를 실시간으로 모니터링하고 분석하는 시스템입니다.</p>
+            <a href="https://intellytics-dashboard.lge.com/ha" class="system-button">
+                <img src="https://github.com/JuhyupKim/JuhyupKim.github.io/blob/main/icon/Tableau_Logo.png?raw=true" alt="HS_Data_DashBoard.png" class="system-image" width="150">
+                <h2 class="system-title">HS 데이터대시보드</h2>
+                <p class="system-description">제품/업/서비스 데이터 분석</p>
+				<button class="button orange">권한 필요</button>
             </a>
 
             <!-- 시스템 5 -->
