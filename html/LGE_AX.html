@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LG AI Transformation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* 사용자 정의 스타일 */
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #111827; /* 다크 그레이 배경 */
+        }
+        .lg-red { color: #A50034; }
+        .bg-lg-red { background-color: #A50034; }
+        .border-lg-red { border-color: #A50034; }
+
+        .slide {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.6s ease-in-out;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slide.active {
+            display: flex;
+            opacity: 1;
+            z-index: 10;
+        }
+
+        .slide-content {
+            width: 90%;
+            max-width: 1100px;
+            height: 90%;
+            max-height: 700px;
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 3rem 4rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+        
+        /* 제목 스타일 */
+        .slide-title {
+            font-size: 1.875rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid #A50034;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .slide-title .section-number {
+            color: #A50034;
+            margin-right: 1rem;
+            font-weight: 900;
+        }
+
+        /* 콘텐츠 리스트 스타일 */
+        .content-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .content-list li::before {
+            content: '■';
+            position: absolute;
+            left: 0;
+            color: #A50034;
+            font-size: 0.8em;
+            top: 0.25rem;
+        }
+        .content-list strong {
+             font-weight: 600;
+             color: #333;
+        }
+
+        /* 카드 레이아웃 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .card {
+            background-color: #f9fafb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            border-left: 4px solid #A50034;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+        }
+        .card-title {
+            font-weight: 700;
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+        }
+
+        /* 네비게이션 버튼 */
+        .nav-btn {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 9999px;
+            width: 3rem;
+            height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+        .nav-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="w-full h-screen overflow-hidden">
+
+    <!-- 프레젠테이션 컨테이너 -->
+    <main class="relative w-full h-screen">
+
+        <!-- 슬라이드 1: 타이틀 -->
+        <section class="slide active">
+            <div class="slide-content justify-center items-center text-center">
+                <h1 class="text-5xl font-extrabold text-gray-800">LG 그룹의 AI Transformation 진행 방향</h1>
+                <p class="mt-4 text-2xl text-gray-600 font-light">복합 위기 속 혁신을 통한 미래 성장 동력 확보</p>
+                <div class="mt-12 border-t pt-4">
+                    <p class="text-gray-500">2025년 6월</p>
+					<p class="text-gray-500">뉴스 기사 기반으로 재구성</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 슬라이드 2: 도입 -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-title"><span class="section-number">1</span>도입: 글로벌 복합 위기와 AX의 중요성</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-bold text-lg mb-2 lg-red">관세 장벽 강화 & 공급망 재편</h3>
+                        <p>미중 기술 패권 경쟁 심화로 인한 관세 장벽 및 반도체 등 핵심 부품 공급망 재편 압력이 가중되고 있습니다. 이는 생산 비용 증가와 수출 경쟁력 약화로 직결됩니다.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-bold text-lg mb-2 lg-red">지정학적 갈등 장기화 및 소비 심리 위축</h3>
+                        <p>러시아-우크라이나, 이스라엘(미국)-이란 전쟁 등으로 인한 원자재 가격 급등과 물류비 인상은 가전업계의 수익성 악화에 직접적인 영향을 미치고 있습니다.</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h3 class="font-bold text-lg mb-2 lg-red">주요 시장 경제 침체</h3>
+                        <p>유럽, 미국 등 주요 시장의 인플레이션과 내수 침체는 소비 심리를 위축시켜 프리미엄 가전 수요 감소를 야기합니다.</p>
+                    </div>
+                    <div class="bg-lg-red text-white p-4 rounded-lg flex flex-col justify-center">
+                        <h3 class="font-bold text-lg mb-2">AX (AI Transformation)의 부상</h3>
+                        <p>이러한 복합 위기 속에서, LG는 단순 DX를 넘어 AI를 업무의 두뇌로 활용하는 'AX'를 통해 기업 체질을 개선하고 미래 경쟁력을 확보하는 근본적 혁신을 추진하고 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 슬라이드 3: 경쟁사 동향 타이틀 -->
+        <section class="slide">
+            <div class="slide-content justify-center">
+                <h2 class="slide-title mx-auto"><span class="section-number">2</span>경쟁사 동향: 글로벌 AI Transformation 전략</h2>
+                <div class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                    <div class="p-4"><p class="font-bold text-2xl text-gray-700">SAMSUNG</p></div>
+                    <div class="p-4"><p class="font-bold text-2xl text-gray-700">Haier</p></div>
+                    <div class="p-4"><p class="font-bold text-2xl text-gray-700">Midea</p></div>
+                    <div class="p-4"><p class="font-bold text-2xl text-gray-700">Hisense</p></div>
+                </div>
+                <p class="text-center mt-8 text-gray-600">글로벌 가전 기업들은 AI를 미래 성장의 핵심으로 인식하고, 각자의 강점을 기반으로 한 AI 전략을 가속화하고 있습니다.</p>
+            </div>
+        </section>
+
+        <!-- 슬라이드 4: 삼성전자 -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-title"><span class="section-number">2.1</span>경쟁사 동향: 삼성전자 (Samsung)</h2>
+                <div class="card-grid">
+                    <div class="card">
+                        <h3 class="card-title">"AI for All" 전략</h3>
+                        <p class="text-sm text-gray-600">모바일, TV, 가전 등 전 제품군에 AI(구글 제미나이)를 확장하며 '모두를 위한 AI' 비전 제시. 갤럭시 AI를 개인 비서로 발전시키는 데 주력.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">SmartThings 플랫폼</h3>
+                        <p class="text-sm text-gray-600">AI 연동을 통한 스마트홈 환경 구현 및 'Knox Matrix'로 멀티 디바이스 환경의 보안 강화.</p>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-title">사용자 경험(UX) 중심</h3>
+                        <p class="text-sm text-gray-600">개인화, 멀티모달 기능(표/차트 이해, 이미지 생성)을 강화하여 생성형 AI의 일상적 활용성 증대.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 슬라이드 5: 하이얼, 메이디 -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-title"><span class="section-number">2.2 / 2.3</span>경쟁사 동향: Haier & Midea</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4">하이얼 (Haier)</h3>
+                        <ul class="content-list text-gray-700 space-y-3">
+                            <li><strong>고객 중심 혁신:</strong> AI를 활용한 스마트 홈 생태계 및 개인화된 경험 제공.</li>
+                            <li><strong>스마트 에너지 관리:</strong> 'hOn 앱'을 통해 가전과 태양 에너지를 연동, 관리하는 독점 플랫폼 제공.</li>
+                            <li><strong>AI 구현의 원년(2025):</strong> 스마트홈, 헬스케어, 산업 인터넷 등 전 분야에 AI 기술 적용 가속화.</li>
+                        </ul>
+                    </div>
+                    <div class="border-t-2 md:border-t-0 md:border-l-2 border-gray-200 pt-6 md:pt-0 md:pl-8">
+                        <h3 class="text-2xl font-bold mb-4">메이디 (Midea)</h3>
+                        <ul class="content-list text-gray-700 space-y-3">
+                            <li><strong>AI 기반 디지털 전환:</strong> 제조 공정 최적화, 예측 유지 보수 등 전반적인 사업 운영에 AI 활용.</li>
+                            <li><strong>설계/주문 최적화:</strong> AI 알고리즘으로 설계 주기 45% 단축 등 압도적인 효율성 향상.</li>
+                            <li><strong>에너지 사업 확장:</strong> '에너지 저장 + 히트 펌프 + AI'를 3대 축으로 에너지 산업을 신성장 동력으로 육성.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 슬라이드 6: 하이센스 -->
+        <section class="slide">
+             <div class="slide-content">
+                <h2 class="slide-title"><span class="section-number">2.4</span>경쟁사 동향: 하이센스 (Hisense)</h2>
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/2">
+                         <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fimgnews.naver.net%2Fimage%2F030%2F2025%2F01%2F24%2F0003279076_001_20250124090113824.jpg&type=sc960_832" alt="하이센스 TV 이미지" class="rounded-lg shadow-md w-full">
+                    </div>
+                    <div class="md:w-1/2">
+                        <ul class="content-list text-gray-700 text-lg space-y-6">
+                            <li><strong>기술의 직관화:</strong> AI를 단순 기능이 아닌, 사용자 중심 혁신의 필수 요소로 전환하는 데 주력.</li>
+                            <li><strong>독자적 AI 엔진:</strong> 'Hi-View AI 엔진'을 TV에 탑재하여 영상 및 사운드 품질을 실시간으로 최적화.</li>
+                            <li><strong>"AI Your Life" 비전:</strong> CES 2025에서 AI를 통해 사용자 경험을 향상시키고 일상을 단순화하는 비전 제시.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 슬라이드 7: LG의 AX 전환 배경 -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-title"><span class="section-number">3</span>LG의 AX 전환 배경 및 핵심 전략</h2>
+                <div class="space-y-6">
+                    <div class="p-6 rounded-lg bg-gray-50 border-l-4 border-lg-red">
+                        <h3 class="font-bold text-xl mb-2">구광모 회장의 'ABC' 경영 철학</h3>
+                        <p>미래 성장 동력으로 <strong>'AI, Bio, Clean tech'</strong>를 명명하고, 그룹의 생존과 미래 경쟁력 확보를 위한 집중 육성을 강조.</p>
+                    </div>
+                    <div class="p-6 rounded-lg bg-gray-50 border-l-4 border-lg-red">
+                        <h3 class="font-bold text-xl mb-2">용어부터 조직까지, 'AX'로 전면 전환</h3>
+                        <p>권봉석 부회장의 지시로 그룹 내 모든 'DX' 용어를 'AX'로 변경. 이는 <strong>그룹 전체의 AI 중심 경영체제를 공고히</strong> 하려는 강력한 의지의 표명.</p>
+                    </div>
+                    <div class="p-6 rounded-lg bg-gray-50 border-l-4 border-lg-red">
+                        <h3 class="font-bold text-xl mb-2">전 계열사 동시 적용 및 실행</h3>
+                        <p>LG전자, 화학, 디스플레이 등 주요 계열사 모두 업무명, 조직명, 행사명을 AX 기반으로 전환. LG유플러스는 <strong>'그로쓰 리딩 AX 컴퍼니'</strong>로의 도약을 선언하며 대규모 조직 개편 단행.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 슬라이드 8: AX의 정의 -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-title"><span class="section-number">4</span>AX(인공지능 전환)의 정의 및 차별점</h2>
+                <div class="flex flex-col md:flex-row gap-8 mt-4">
+                    <div class="md:w-1/2 p-6 bg-gray-100 rounded-lg">
+                        <h3 class="text-2xl font-bold text-center mb-4">DX (Digital Transformation)</h3>
+                        <p class="text-center text-gray-600">정보와 프로세스의 '디지털화' 및 '시스템화'에 머무름.</p>
+                    </div>
+                    <div class="md:w-1/2 p-6 bg-lg-red text-white rounded-lg ring-4 ring-offset-2 ring-red-300">
+                        <h3 class="text-2xl font-bold text-center mb-4">AX (AI Transformation)</h3>
+                        <p class="text-center">AI가 데이터를 분석하고, 인간의 판단을 <strong>'보조하거나 대체'</strong>하는 단계까지 포함하는 더 높은 수준의 '지능화'와 '자율화'.</p>
+                    </div>
+                </div>
+                <div class="mt-8 p-4 text-center bg-yellow-100 border border-yellow-300 rounded-lg">
+                    <p class="font-bold text-lg text-yellow-800">LG전자 AI 지향점: '공감지능(Affectionate Intelligence)'</p>
+                    <p class="text-yellow-700">AI가 고객의 삶과 상호작용하고 필요를 예측하여 최적의 솔루션을 제공하는 방향성 제시 (CES 2025)</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 슬라이드 9: 기대 효과 -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-title"><span class="section-number">5</span>AX 전환을 통한 기대 효과</h2>
+                <div class="card-grid mt-8">
+                     <div class="card">
+                        <h3 class="card-title">생산성 혁신</h3>
+                        <p class="text-sm text-gray-600">AI 기반 업무 재설계로 전사적 효율 극대화. 기존 업무들을 Task 단위로 쪼개고 AI와 협업 혹은 대체할 수 있도록 검토.</p>
+                    </div>
+                     <div class="card">
+                        <h3 class="card-title">조직 문화 재정의</h3>
+                        <p class="text-sm text-gray-600">AI 중심의 새로운 업무 방식과 의사결정 체계를 구축하여, 데이터 기반의 빠르고 정확한 소통 및 협업 문화 확산.</p>
+                    </div>
+                     <div class="card">
+                        <h3 class="card-title">그룹 체질 변화</h3>
+                        <p class="text-sm text-gray-600">미래 먹거리(ABC) 중심으로 사업 구조를 근본적으로 재편하고, AI를 통해 그룹 전체의 지속 가능한 성장 동력 확보.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 슬라이드 10: 핵심 인프라 -->
+        <section class="slide">
+            <div class="slide-content">
+                <h2 class="slide-title"><span class="section-number">6</span>AX 추진의 핵심 인프라</h2>
+                <ul class="content-list space-y-4 text-gray-700">
+                    <li><strong>LG AI연구원 & EXAONE:</strong> 그룹의 AI 싱크탱크. 초거대 AI '엑사원'의 성능을 지속 고도화('엑사원 4.0' 공개 예정)하며 산업 현장 혁신 주도.</li>
+                    <li><strong>기업용 AI 에이전트 '챗엑사원':</strong> 사내 보안 환경에서 임직원 생산성 향상. 4만 명 이상이 활용하며 133개 업무별 맞춤형 답변 제공.</li>
+                    <li><strong>LG AI대학원 개교:</strong> 국내 최초 정식 학위 인정 사내 대학원. 현장 투입 가능한 '실전형 AI 전문가' 자체 양성.</li>
+                    <li><strong>'ABC' 분야 집중 투자:</strong> 2028년까지 5년간 약 <strong>50조 원 이상</strong>을 집중 투자하여 AI 기반 혁신 가속화.</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- 슬라이드 11: LG전자 제품/솔루션 -->
+        <section class="slide">
+            <div class="slide-content">
+                 <h2 class="slide-title"><span class="section-number">7</span>LG전자의 AI 제품 및 솔루션</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+                    <div class="text-center p-4">
+                        <h3 class="font-bold mt-2">휘센 AI 시스템 에어컨</h3>
+                        <p class="text-sm text-gray-600">레이더 센서와 강화된 AI로 물체 위치/움직임을 감지하여 최적의 냉방 제공.</p>
+                    </div>
+                    <div class="text-center p-4">
+                        <h3 class="font-bold mt-2">'AI 홈' 비전</h3>
+                        <p class="text-sm text-gray-600">AI홈 허브를 중심으로 가전과 IoT 기기를 유기적으로 연결하고 제어하는 솔루션.</p>
+                    </div>
+                    <div class="text-center p-4">
+                        <h3 class="font-bold mt-2">미래 모빌리티 기술</h3>
+                        <p class="text-sm text-gray-600">콘셉트카 '슈필라움'에 AI 공간 솔루션을 적용, 기아와 협력하여 상용화 추진.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 슬라이드 12: 마지막 슬라이드 -->
+        <section class="slide">
+            <div class="slide-content justify-center items-center text-center">
+                <div class="w-24 h-24 mb-8 rounded-full bg-lg-red flex items-center justify-center">
+                     <span class="text-white text-4xl font-black">LG</span>
+                </div>
+                <h2 class="text-4xl font-bold">감사합니다</h2>
+                <p class="mt-4 text-xl text-gray-600">Life's Good</p>
+            </div>
+        </section>
+    </main>
+    
+    <!-- 네비게이션 컨트롤 -->
+    <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center space-x-6 z-30">
+        <button id="prevBtn" class="nav-btn" aria-label="이전 슬라이드">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <span id="slideCounter" class="text-white text-sm font-medium"></span>
+        <button id="nextBtn" class="nav-btn" aria-label="다음 슬라이드">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+    </div>
+
+    <!-- 진행률 표시줄 -->
+    <div class="absolute bottom-0 left-0 w-full h-1 bg-gray-700 z-20">
+        <div id="progressBar" class="h-full bg-lg-red transition-all duration-300 ease-linear"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const slideCounter = document.getElementById('slideCounter');
+            const progressBar = document.getElementById('progressBar');
+            
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            function showSlide(index) {
+                // 현재 활성 슬라이드를 비활성화
+                const currentActive = document.querySelector('.slide.active');
+                if (currentActive) {
+                    currentActive.classList.remove('active');
+                }
+                
+                // 새 슬라이드를 활성화
+                slides[index].classList.add('active');
+                
+                // 카운터 및 진행률 업데이트
+                slideCounter.textContent = `${index + 1} / ${totalSlides}`;
+                progressBar.style.width = `${((index + 1) / totalSlides) * 100}%`;
+                
+                // 버튼 활성/비활성 상태 업데이트
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index === totalSlides - 1;
+
+                currentSlide = index;
+            }
+
+            // 이전/다음 버튼 이벤트 리스너
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    showSlide(currentSlide - 1);
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < totalSlides - 1) {
+                    showSlide(currentSlide + 1);
+                }
+            });
+            
+            // 키보드 네비게이션
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') {
+                    nextBtn.click();
+                } else if (e.key === 'ArrowLeft') {
+                    prevBtn.click();
+                }
+            });
+
+            // 초기 슬라이드 표시
+            showSlide(0);
+        });
+    </script>
+</body>
+</html>
