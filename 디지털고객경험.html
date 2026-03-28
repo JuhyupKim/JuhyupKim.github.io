@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2030 직장인 여성을 위한 기초 스킨케어 신제품 기획</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap');
+        
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .active-slide {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .table-header {
+            background-color: #2e3b8e;
+            color: white;
+            font-weight: bold;
+        }
+
+        .table-row-label {
+            background-color: #2e3b8e;
+            color: white;
+            width: 200px;
+            font-weight: bold;
+        }
+
+        .content-cell {
+            background-color: #f1f5f9;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <!-- Navigation -->
+    <div class="max-w-5xl mx-auto mb-8 flex justify-between items-center">
+        <h1 class="text-xl font-bold text-indigo-900">MBA 프로젝트: 데이터 기반 신제품 기획</h1>
+        <div class="flex space-x-2">
+            <button onclick="prevSlide()" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300 transition text-sm">이전</button>
+            <button onclick="nextSlide()" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition text-sm">다음</button>
+        </div>
+    </div>
+
+    <!-- Slide 1: 목적성 및 비즈니스 질문 정의 -->
+    <div id="slide1" class="slide active-slide max-w-5xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+        <h2 class="text-3xl font-bold text-indigo-800 mb-6 border-b-2 border-indigo-100 pb-2">1. 목적성 및 비즈니스 질문 정의</h2>
+        <table class="w-full border-collapse border border-gray-300 overflow-hidden rounded-lg">
+            <tr>
+                <td class="table-row-label p-4 text-center border border-white">핵심 질문<br>(Key Business Question)</td>
+                <td class="content-cell p-4 border border-gray-300">
+                    <ul class="list-disc ml-5 space-y-2">
+                        <li>2030 직장인 여성이 사무실 환경(냉난방 등)에서 느끼는 가장 큰 피부 고민은 무엇인가?</li>
+                        <li>기존 장벽 케어 제품에서 소비자가 느끼는 가장 큰 불만족 요인은 무엇인가?</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="table-row-label p-4 text-center border border-white">핵심 가설<br>(Key Hypothesis)</td>
+                <td class="content-cell p-4 border border-gray-300">
+                    <p>“직장인 여성은 바쁜 아침 시간에 빠른 흡수력을 원하며, 사무실 내 건조함(속당김)을 즉각적으로 해결해주는 <b>'고농축 올인원 장벽 세럼'</b>에 대한 미충족 수요가 높을 것이다.”</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="table-row-label p-4 text-center border border-white">분석 대상 및 범위<br>(Target & Scope)</td>
+                <td class="content-cell p-4 border border-gray-300">
+                    <ul class="list-disc ml-5">
+                        <li><b>타겟:</b> 피부 장벽 손상을 느끼는 25~39세 여성 직장인</li>
+                        <li><b>범위:</b> 기초 스킨케어 - 에센스/세럼 카테고리</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="table-row-label p-4 text-center border border-white">성공 지표<br>(Success Metrics/KPIs)</td>
+                <td class="content-cell p-4 border border-gray-300">
+                    <ul class="list-disc ml-5">
+                        <li>크롤링 분석 기반 '속건조/흡수력' 관련 긍정 리뷰 비율 80% 이상 확보</li>
+                        <li>신제품 출시 전 검색 트렌드(Keywords) 점유율 15% 상승 목표</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Slide 2: 고객 여정과 데이터 접점 매핑 -->
+    <div id="slide2" class="slide max-w-5xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+        <h2 class="text-3xl font-bold text-indigo-800 mb-6 border-b-2 border-indigo-100 pb-2">2. 고객 여정과 데이터 접점 매핑</h2>
+        <table class="w-full border-collapse border border-gray-300">
+            <thead class="table-header">
+                <tr>
+                    <th class="p-4 border border-white">여정 단계</th>
+                    <th class="p-4 border border-white">주요 고객 행위(Action)</th>
+                    <th class="p-4 border border-white">생성되는 데이터 흔적(Traces)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="table-row-label p-4 text-center border border-white">탐색 및 인지</td>
+                    <td class="content-cell p-4 border border-gray-300 text-sm">유튜브/인스타그램에서 '사무실 건조', '피부 뒤집어짐' 검색 및 정보 소비</td>
+                    <td class="content-cell p-4 border border-gray-300 text-sm italic">예: 네이버 검색어 트렌드, SNS 언급량, 광고 클릭 로그</td>
+                </tr>
+                <tr class="bg-white">
+                    <td class="table-row-label p-4 text-center border border-white">고민 및 비교</td>
+                    <td class="content-cell p-4 border border-gray-300 text-sm">글로우픽, 화해 앱에서 성분 확인 및 유사 효능 제품 평점 비교</td>
+                    <td class="content-cell p-4 border border-gray-300 text-sm italic">예: 화해 성분 조회수, 글로우픽 랭킹 변화, 상세페이지 체류 시간</td>
+                </tr>
+                <tr>
+                    <td class="table-row-label p-4 text-center border border-white">결제 및 전환</td>
+                    <td class="content-cell p-4 border border-gray-300 text-sm">올리브영 앱 특가 시 구매 또는 네이버 쇼핑 라이브 구매</td>
+                    <td class="content-cell p-4 border border-gray-300 text-sm italic">예: 장바구니 전환율, 쿠폰 사용 여부, 결제 취소 사유</td>
+                </tr>
+                <tr class="bg-white">
+                    <td class="table-row-label p-4 text-center border border-white">사후 경험 및 확산</td>
+                    <td class="content-cell p-4 border border-gray-300 text-sm">구매 확정 후 '흡수력', '보습 지속력' 위주의 리뷰 작성 및 SNS 공유</td>
+                    <td class="content-cell p-4 border border-gray-300 text-sm italic">예: 텍스트 리뷰 감성 분석 결과, 재구매 주기, CS 상담 내역</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="mt-4 text-sm text-indigo-600 italic">✓ 여정 단계는 프로젝트 성격에 맞춰 '직장인 라이프사이클' 중심으로 재구성 가능</p>
+    </div>
+
+    <!-- Slide 3: 외부 데이터 소스 발굴 -->
+    <div id="slide3" class="slide max-w-5xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+        <h2 class="text-3xl font-bold text-indigo-800 mb-6 border-b-2 border-indigo-100 pb-2">3. 외부 데이터 소스 발굴(크롤링 대상)</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="border border-indigo-200 rounded-lg p-6 bg-indigo-50">
+                <h3 class="font-bold text-lg mb-4 text-indigo-900 underline">타겟 채널 및 소스</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <span class="text-indigo-600 mr-2">▶</span>
+                        <span><b>올리브영/글로우픽:</b> 경쟁사 '장벽 케어' 상위 제품군 사용자 리뷰</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-indigo-600 mr-2">▶</span>
+                        <span><b>유튜브 댓글:</b> 뷰티 인플루언서의 기초 케어 추천 영상 내 시청자 질문</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-indigo-600 mr-2">▶</span>
+                        <span><b>네이버 블로그:</b> '사무실 화장품 추천', '환절기 스킨케어' 키워드 포스팅</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="border border-indigo-200 rounded-lg p-6 bg-indigo-50">
+                <h3 class="font-bold text-lg mb-4 text-indigo-900 underline">수집할 핵심 키워드/속성</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <span class="text-indigo-600 mr-2">▶</span>
+                        <span><b>긍정 포인트:</b> '속당김 완화', '메이크업 궁합', '빠른 흡수', '향'</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-indigo-600 mr-2">▶</span>
+                        <span><b>부정(Pain):</b> '끈적임', '밀림', '용기 불편함', '가성비'</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-indigo-600 mr-2">▶</span>
+                        <span><b>상황 키워드:</b> '야근', '사무실 건조', '마스크', '생리 전후 트러블'</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="bg-gray-100 p-4 rounded text-sm text-gray-700">
+            <p>💡 <b>데이터 활용 방안:</b> 위 키워드들을 크롤링하여 워드클라우드 및 LDA 토픽 모델링을 실시, 기존 제품이 해결하지 못한 '직장인 특화 불편 사항'을 도출하여 제품 컨셉에 반영함.</p>
+        </div>
+    </div>
+
+    <!-- Slide 4: 결론 및 제안 -->
+    <div id="slide4" class="slide max-w-5xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+        <h2 class="text-3xl font-bold text-indigo-800 mb-6 border-b-2 border-indigo-100 pb-2">신제품 컨셉 제안 (Conclusion)</h2>
+        <div class="flex flex-col md:flex-row gap-8 items-center">
+            <div class="w-full md:w-1/2">
+                <div class="bg-indigo-900 text-white p-6 rounded-2xl shadow-xl">
+                    <h3 class="text-2xl font-bold mb-2 text-yellow-400">Barrier-Next 24/7</h3>
+                    <p class="text-sm opacity-80 mb-4">"Office-Proof High Performance Serum"</p>
+                    <ul class="space-y-2 text-sm">
+                        <li>✅ <b>Texture:</b> 화장 밀림 없는 워터리 세럼</li>
+                        <li>✅ <b>Main Benefit:</b> 히터/에어컨 아래서도 유지되는 12시간 속보습</li>
+                        <li>✅ <b>Feature:</b> 펌프 타입으로 위생적이고 빠른 사용</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 space-y-4">
+                <div class="border-l-4 border-indigo-600 pl-4">
+                    <h4 class="font-bold">데이터 기반 차별화 전략</h4>
+                    <p class="text-sm text-gray-600">리뷰 분석 결과 '장벽 크림의 무거운 제형이 아침 화장에 방해된다'는 의견이 지배적임. 이를 해결하기 위해 '세럼 제형'으로 장벽 효능을 극대화함.</p>
+                </div>
+                <div class="border-l-4 border-indigo-600 pl-4">
+                    <h4 class="font-bold">마케팅 포인트</h4>
+                    <p class="text-sm text-gray-600">사무실 환경을 타겟팅하여 'Office-Specific' 인증 성분 강조 및 퇴근까지 무너지지 않는 피부 바탕 강조.</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 text-center text-xs text-gray-400">
+            © 2024 MBA Data Marketing Project | Student: [본인이름]
+        </div>
+    </div>
+
+    <!-- Script for Slide Control -->
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 4;
+
+        function showSlide(n) {
+            for (let i = 1; i <= totalSlides; i++) {
+                document.getElementById('slide' + i).classList.remove('active-slide');
+            }
+            document.getElementById('slide' + n).classList.add('active-slide');
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 1) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+    </script>
+</body>
+</html>
